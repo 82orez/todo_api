@@ -1,5 +1,6 @@
 const DataTypes = require('sequelize');
 
+// default 값으로 화살표 함수 내보내기.
 module.exports = (sequelize) => {
   return sequelize.define(
     'TodoList',
