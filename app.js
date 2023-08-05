@@ -15,7 +15,7 @@ const launchServer = async () => {
   //   res.json({ message: 'Hello Todo' });
   // });
 
-  app.get('/', getAll);
+  app.get('/todolist', getAll);
   app.post('/todolist', insert);
   app.delete('/todolist', remove);
   app.put('/todolist', update);
