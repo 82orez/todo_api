@@ -11,9 +11,14 @@ const launchServer = async () => {
   app.use(morgan('dev'));
   app.use(cors());
 
-  // app.get('/', (req, res) => {
-  //   res.json({ message: 'Hello Todo' });
-  // });
+  // ! React 배포 부분.
+  app.use('/', express.static(`${__dirname}/build`));
+  app.get('/', (req, res) => {
+    if (`${__dirname}/build/index.html`) {
+      res.sendFile(`${__dirname}/build/index.html`);
+    }
+    res.send('No index.html exists!');
+  });
 
   app.get('/todolist', getAll);
   app.post('/todolist', insert);
