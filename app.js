@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -13,7 +14,9 @@ const launchServer = async () => {
 
   // ! React 배포 부분.
   app.use('/', express.static(`${__dirname}/build`));
+
   app.get('/', (req, res) => {
+
     if (`${__dirname}/build/index.html`) {
       res.sendFile(`${__dirname}/build/index.html`);
     }
@@ -31,9 +34,11 @@ const launchServer = async () => {
   } catch (e) {
     console.log('Unable to connect to DB!!');
     console.error(e);
+    // eslint-disable-next-line no-undef
     process.exit(1);
   }
 
+  // eslint-disable-next-line no-undef
   const port = process.env.PORT || 8080;
   app.listen(port, () => console.log(`Server is running on port ${port}`));
 };
