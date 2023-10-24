@@ -216,6 +216,6 @@ $RECYCLE.BIN/
 # WebStorm
 .idea/
 
-.vscode
+.vscode/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,node,react
