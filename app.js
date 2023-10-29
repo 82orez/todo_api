@@ -1,3 +1,5 @@
+// ! 먼저 models/index.js 파일에서 의 개발 환경 설정 필요.
+
 /* eslint-disable no-constant-condition */
 const express = require('express');
 const morgan = require('morgan');
