@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 
 // ! 개발 환경 설정하기.
-// const env = process.env.NODE_ENV || 'development';
-const env = process.env.NODE_ENV || 'production';
+ const env = process.env.NODE_ENV || 'development';
+// const env = process.env.NODE_ENV || 'production';
 
 const config = require('../config/config.json')[env];
 

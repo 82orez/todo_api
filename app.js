@@ -4,6 +4,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const dotenv = require('dotenv');
 const { sequelize } = require('./models');
 const { getAll, insert, remove, update } = require('./controllers/todolist.controller');
 
@@ -13,14 +14,14 @@ const launchServer = async () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(morgan('dev'));
   app.use(cors());
+  dotenv.config();
 
   // ! React 배포 부분.
-  app.use('/', express.static(`${__dirname}/build`));
+  app.use(express.static(`${__dirname}/build`));
 
   app.get('/', (req, res) => {
-
-    if (`${__dirname}/build/index.html`) {
-      res.sendFile(`${__dirname}/build/index.html`);
+    if (`${__dirname}/index.html`) {
+      res.sendFile(`${__dirname}/index.html`);
     }
     res.send('No index.html exists!');
   });
@@ -45,7 +46,7 @@ const launchServer = async () => {
   app.listen(port, () => console.log(`Server is running on port ${port}`));
 };
 
-launchServer();
+launchServer().then();
 
 // http://localhost:8080/
 // Sever 종료는 터미널에서 ctrl + C
