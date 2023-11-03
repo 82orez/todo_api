@@ -1,9 +1,5 @@
 const Sequelize = require('sequelize');
-
-// ! 개발 환경 설정하기.
- const env = process.env.NODE_ENV || 'development';
-// const env = process.env.NODE_ENV || 'production';
-
+const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config.json')[env];
 
 // MAMP 를 설치한 경우, mysql 의 port 넘버는 8889번으로 변경되므로 포트 부분을 추가해 줌.
