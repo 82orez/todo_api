@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const dotenv = require('dotenv');
+dotenv.config();
 const { sequelize } = require('./models');
 const { getAll, insert, remove, update } = require('./controllers/todolist.controller');
 
@@ -12,7 +13,6 @@ const launchServer = async () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(morgan('dev'));
   app.use(cors());
-  dotenv.config();
 
   // ! React 배포 부분.
   app.use(express.static(`${__dirname}/build`));
