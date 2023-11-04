@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const dotenv = require('dotenv');
 dotenv.config();
 const env = process.env.NODE_ENV || 'development';
-const config = require('../config/config.json')[env];
+const config = require('../config/config')[env];
 
 // MAMP 를 설치한 경우, mysql 의 port 넘버는 8889번으로 변경되므로 포트 부분을 추가해 줌.
 const sequelize = new Sequelize(config.database, config.username, config.password, { host: config.host, dialect: 'mysql', port: config.port });
