@@ -12,4 +12,3 @@ module.exports = {
   // ./todolist_model.js 파일에서 default 값으로 내보내진 화살표 함수를 가져와서 sequelize 를 인자로 넘겨서 TodoList 키의 value 로 할당.
   TodoList: require('./todolist_model')(sequelize),
 };
-
