@@ -34,7 +34,6 @@ const launchServer = async () => {
   } catch (e) {
     console.log('Unable to connect to DB!!');
     console.error(e);
-    // eslint-disable-next-line no-undef
     process.exit(1);
   }
 

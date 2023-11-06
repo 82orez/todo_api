@@ -1,7 +1,7 @@
-const DataTypes = require('sequelize');
-
 // default 값으로 화살표 함수 내보내기.
-module.exports = (sequelize) => {
+// sequelize 는 연결 객체, DataTypes 는 Sequelize 라이브러리 자체를 의미.
+
+module.exports = (sequelize, DataTypes) => {
   return sequelize.define(
     'TodoList',
     {
