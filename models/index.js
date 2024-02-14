@@ -6,7 +6,9 @@ const config = require('../config/config')[env];
 const db = {};
 
 // MAMP 를 설치한 경우, mysql 의 port 넘버는 8889번으로 변경되므로 포트 부분을 추가해 줌.
-const sequelize = new Sequelize(config.database, config.username, config.password, { host: config.host, dialect: 'mysql', port: config.port });
+// const sequelize = new Sequelize(config.database, config.username, config.password, { host: config.host, dialect: 'mysql', port: config.port });
+// 그냥 아래처럼 config.js(on) 파일 자체를 넣어 줘도 됨.
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 // 연결 객체를 db 객체에 저장.
 db.sequelize = sequelize;

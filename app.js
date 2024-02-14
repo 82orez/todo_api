@@ -14,7 +14,7 @@ const launchServer = async () => {
   app.use(cors());
 
   // ! React 배포 부분.
-  app.use(express.static(`${__dirname}/build`));
+  app.use('/', express.static(`${__dirname}/build`));
 
   app.get('/', (req, res) => {
     if (`${__dirname}/index.html`) {
